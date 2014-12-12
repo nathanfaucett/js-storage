@@ -1,0 +1,23 @@
+{
+  "name": "storage",
+  "version": "0.0.1",
+  "description": "local storage for the browser",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nathanfaucett/storage.git"
+  },
+  "main": "src/index.js",
+  "keywords": [
+    "storage",
+    "storage.js"
+  ],
+  "author": "Nathan Faucett",
+  "license": "BSD-2-Clause",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt": "",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-jsbeautifier": "",
+    "mocha": "^2.0.1"
+  }
+}
