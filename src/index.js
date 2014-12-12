@@ -1,5 +1,7 @@
 var storage = module.exports,
 
+    hasOwnProp = Object.prototype.hasOwnProperty,
+
     supportsStorage = (function() {
         try {
             return "localStorage" in global && global.localStorage !== null;
@@ -8,7 +10,7 @@ var storage = module.exports,
         }
     }()),
 
-    localStorage, get, set, remove;
+    localStorage, get, set, remove, clear;
 
 
 if (supportsStorage) {
@@ -25,6 +27,10 @@ if (supportsStorage) {
     remove = function remove(key) {
         return localStorage.removeItem(key);
     };
+
+    clear = function clear() {
+        return localStorage.clear();
+    };
 } else {
     localStorage = {};
 
@@ -39,6 +45,16 @@ if (supportsStorage) {
     remove = function remove(key) {
         return delete localStorage[key];
     };
+
+    clear = function clear() {
+        var key;
+
+        for (key in localStorage) {
+            if (hasOwnProp.call(localStorage, key)) {
+                delete localStorage[key];
+            }
+        }
+    };
 }
 
 
@@ -52,4 +68,8 @@ storage.set = function(key, value) {
 
 storage.remove = function(key) {
     return remove(key);
+};
+
+storage.clear = function() {
+    return clear();
 };
