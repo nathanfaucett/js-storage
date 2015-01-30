@@ -1,6 +1,7 @@
-var storage = module.exports,
+var has = require("has");
 
-    hasOwnProp = Object.prototype.hasOwnProperty,
+
+var storage = module.exports,
 
     supportsStorage = (function() {
         try {
@@ -50,7 +51,7 @@ if (supportsStorage) {
         var key;
 
         for (key in localStorage) {
-            if (hasOwnProp.call(localStorage, key)) {
+            if (has(localStorage, key)) {
                 delete localStorage[key];
             }
         }

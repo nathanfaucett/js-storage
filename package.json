@@ -19,5 +19,8 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-jsbeautifier": "",
     "mocha": "^2.0.1"
+  },
+  "dependencies": {
+    "has": "nathanfaucett/has"
   }
 }
