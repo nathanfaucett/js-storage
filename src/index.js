@@ -40,7 +40,7 @@ if (supportsStorage) {
     };
 
     set = function set(key, value) {
-        localStorage[key] = value;
+        localStorage[key] = (value && value.toString) ? value.toString() : value + "";
     };
 
     remove = function remove(key) {

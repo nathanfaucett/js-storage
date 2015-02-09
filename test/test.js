@@ -21,7 +21,16 @@ describe("storage", function() {
 
     describe("#remove(key)", function() {
         it("should remove the value of key", function() {
+            storage.set("key", "value");
             storage.remove("key");
+            assert.equal(storage.get("key"), undefined);
+        });
+    });
+
+    describe("#clear()", function() {
+        it("should clear all values", function() {
+            storage.set("key", "value");
+            storage.clear();
             assert.equal(storage.get("key"), undefined);
         });
     });
