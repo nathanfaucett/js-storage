@@ -21,6 +21,7 @@
     "mocha": "^2.0.1"
   },
   "dependencies": {
-    "has": "nathanfaucett/has"
+    "has": "nathanfaucett/has",
+    "environment": "nathanfaucett/environment"
   }
 }

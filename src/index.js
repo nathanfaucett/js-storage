@@ -1,11 +1,14 @@
-var has = require("has");
+var has = require("has"),
+    environment = require("environment");
 
 
-var storage = module.exports,
+var storage = exports,
+
+    window = environment.window,
 
     supportsStorage = (function() {
         try {
-            return "localStorage" in global && global.localStorage !== null;
+            return "localStorage" in window && window.localStorage != null;
         } catch (e) {
             return false;
         }
@@ -15,7 +18,7 @@ var storage = module.exports,
 
 
 if (supportsStorage) {
-    localStorage = global.localStorage;
+    localStorage = window.localStorage;
 
     get = function get(key) {
         return localStorage.getItem(key);
