@@ -1,4 +1,4 @@
 Storage
 =======
 
-Storage for the browser
+local storage polyfill

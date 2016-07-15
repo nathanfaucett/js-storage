@@ -1,5 +1,5 @@
-var has = require("has"),
-    environment = require("environment");
+var has = require("@nathanfaucett/has"),
+    environment = require("@nathanfaucett/environment");
 
 
 var storage = exports,
